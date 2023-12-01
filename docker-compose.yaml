@@ -29,7 +29,7 @@ services:
       - basedatos:/var/lib/mysql 
       - ./database.sql:/data/application/database.sql
 
-    ports:
+    expose:
       - "3306:3306"  
 
   phpmyadmin:
