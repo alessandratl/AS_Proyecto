@@ -28,7 +28,7 @@ spec:
       - env:
         - name: ALLOW_OVERRIDE
           value: "true"
-        image: web
+        image: alessandratl/as_app2023
         imagePullPolicy: ""
         name: appserv
         ports:

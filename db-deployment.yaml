@@ -41,7 +41,7 @@ spec:
         imagePullPolicy: ""
         name: appbd
         ports:
-        - containerPort: 0
+        - containerPort: 3306
         resources: {}
         volumeMounts:
         - mountPath: /var/lib/mysql

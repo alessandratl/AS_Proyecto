@@ -25,7 +25,7 @@ spec:
         io.kompose.service: python-script
     spec:
       containers:
-      - image: python-script
+      - image: alessandratl/as_python2023
         imagePullPolicy: ""
         name: apppython
         ports:
