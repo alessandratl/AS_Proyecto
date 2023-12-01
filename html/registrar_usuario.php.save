@@ -1,0 +1,79 @@
+<?php
+include("config.php");
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recupera los datos del formulario
+    $nombre = $_POST["nombre"];
+    $correo = $_POST['correo'];
+    $password = $_POST['password'];
+  // if (!$conn) {
+    //    die("La conexión a la base de datos falló: " . mysqli_connect_error());
+   // }
+    // Crea la consulta SQL para insertar el nuevo usuario en la tabla
+   // $sql = "INSERT INTO Usuarios (nombre, correo, contrasena) VALUES (?, ?, ?)";
+
+    // Prepara la consulta SQL
+   // $stmt = mysqli_prepare($conn, $sql);
+    //Verificar que la función 'mysqli_prepare' haya tenido éxito
+   // if (!$stmt) {
+     //   die("Error al preparar la consulta SQL: " . mysqli_error($conn));
+   // }
+
+     // Asocia los parámetros con los valores
+    // mysqli_stmt_bind_param($stmt, "ssssssss", $nombre, $correo, $password);
+    //Ejecuta la consulta SQL
+        // Cierra la conexión y la declaración
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+}
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <script src= "./script.js"></script>
+    <title>ToDoList</title>
+</head>
+<body>
+    
+        
+            <div class="contenedor">
+                <div class="col2"> 
+                    <div class="info">
+                        <div class="contenedor-form">
+                            <h2>Registrarse</h2>
+                            <form id="registro-form" action="gestionar_registro.php" class="" method="POST">
+                                <div class="entrada">
+                                    <label for="nombre">Nombre Completo</label>
+                                    <input type="text" id="nombre" name="nombre">
+                                </div>
+                                <div class="entrada">
+                                    <label for="correo">Correo Electrónico</label>
+                                    <input type="text" id="correo" name="correo"> <!-- Agregado: id y name -->
+                                </div>
+                                <div class="entrada">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" name="password"> <!-- Agregado: id y name -->
+                                </div>
+                                <button type="button" onclick="redirectToToDoList()">Registrarse</button>
+                            
+                            </form>
+                        </div>
+                    </div>
+                </div>       
+            </div>
+            
+        
+    <script>
+      
+        function redirectToToDoList() {
+            // Redirige a la página de la lista de tareas
+            window.location.href = "todolist.html";
+        }
+    </script>
+
+</body>
+</html>

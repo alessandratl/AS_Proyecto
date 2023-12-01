@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Inicio</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="col2">
+            <div class="info">
+                <div class="contenedor-form">
+                    <h2>Bienvenido</h2>
+                    <form action="">
+                        
+                        <p>Selecciona una opción:</p>
+                        
+                        <button type="button" onclick="redirectToLogin()">Iniciar Sesión</button>
+                        <p> o : </p>
+                        <button type="button" onclick="redirectToRegistrarse()">Registrarse</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function redirectToRegistrarse() {
+            // Redirige a la página de registro
+            window.location.href = "registrar_usuario.php";
+        }    
+
+        function redirectToLogin() {
+            // Redirige a la página de la lista de tareas
+            window.location.href = "iniciar_sesion.php";
+        }
+    </script>
+    
+</body>
+</html>

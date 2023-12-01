@@ -1,0 +1,56 @@
+version: '3'
+
+services:
+
+  web:
+    image: web    
+    build: .
+    container_name: appserv
+    ports:
+      - "80:80" 
+    volumes:
+      - ./html:/var/www/html  
+    environment:
+      - ALLOW_OVERRIDE=true
+    depends_on:
+      - db
+
+  db:
+    image: mysql:latest  
+    container_name: appbd
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: xcOP37L3  
+      MYSQL_DATABASE: Agenda  
+      MYSQL_USER: admin  
+      MYSQL_PASSWORD: xcOP37L3  
+    command: --init-file /data/application/database.sql
+    volumes:
+      - basedatos:/var/lib/mysql 
+      - ./database.sql:/data/application/database.sql
+
+    ports:
+      - "3306:3306"  
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: appphp
+    ports:
+      - "8181:80"
+    environment:
+      PMA_ARBITRARY: 1
+    links:
+      - db:mysql
+
+  python-script:
+    build:
+      context: . 
+      dockerfile : Dockerfile-python
+    container_name: apppython
+    volumes:
+      - ./html:/html
+    ports:
+      - "5000:5000"
+
+volumes:
+  basedatos:
