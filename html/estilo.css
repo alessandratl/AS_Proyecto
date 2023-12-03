@@ -68,6 +68,12 @@ body {
 .contenedor .col2 .info {
     max-width: 400px;
     margin: 30px auto 0 auto;
+    align-items: center;
+    text-align: center;
+    width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
 }
 
 .contenedor .col2 .info .contenedor-form {
@@ -109,6 +115,7 @@ body {
 }
 
 .contenedor .col2 .contenedor-form form button {
+    
     display: block;
     width: 100%;
     border: none;

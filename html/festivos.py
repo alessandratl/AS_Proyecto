@@ -51,7 +51,18 @@ def crear_html_con_estilo(nombre_fichero):
 
     # Cerrar la estructura del HTML
     contenido_html += '''
+	
     </table>
+
+    <button type="button" onclick="redirectToLogin()">Salir</button>
+    <script>
+        function redirectToLogin() {
+            // Redirige a la página de registro
+            window.location.href = "index.html";
+        }    
+    </script>
+   
+
 </body>
 </html>
 '''

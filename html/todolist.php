@@ -76,17 +76,23 @@ $result_tareas = mysqli_query($conn, $sql_tareas);
 </head>
 <body>
     <div class="contenedor">
-	<div class="col1">
+	<div class="col2">
+		<div class="contenedor-form">
         
             
                 
                 <h2>Tareas del usuario: <?php echo $correo_usuario; ?></h2>
+		
                     <!-- Formulario para agregar nueva tarea -->
                     <form action="" method="POST">
+			<div class="entrada">
                         <label for="nueva_tarea">Nueva Tarea:</label>
+			
                         <input type="text" id="nueva_tarea" name="nueva_tarea" required>
+			
                         <input type="submit" value="Agregar">
                     </form>
+		</div>
 
                     <!-- Mostrar lista de tareas -->
                     <ul>
@@ -118,14 +124,17 @@ $result_tareas = mysqli_query($conn, $sql_tareas);
 
                     <!-- Formulario para cerrar sesión -->
                     <form action="" method="POST">
+			
                         <input type="submit" name="cerrar_sesion" value="Cerrar Sesión">
-                    </form>
-
+                   	
+		    </form>
+		   
                     <button type="button" onclick="redirectToFestivos()">Festivos</button>
-
+		  
                 
-
-            
+            </div>
+		
+            </div>
        </div> 
     </div>
     <script>
