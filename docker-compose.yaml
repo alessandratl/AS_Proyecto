@@ -3,8 +3,8 @@ version: '3'
 services:
 
   web:
-    image: web    
-    build: .
+    image: alessandratl/as_app2023    
+    #build: .
     container_name: appserv
     ports:
       - "80:80" 
@@ -43,9 +43,10 @@ services:
       - db:mysql
 
   python-script:
-    build:
-      context: . 
-      dockerfile : Dockerfile-python
+   # build:
+    #  context: . 
+     # dockerfile : Dockerfile-python
+    image: alessandratl/as_python2023
     container_name: apppython
     volumes:
       - ./html:/html
